@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LenovoController"
         mc:Ignorable="d"
-        Title="Lenovo Controller" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" x:Name="mainWindow"
+        Title="联想控制台" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" x:Name="mainWindow"
         FontSize="14">
-    <StackPanel Margin="15">
+
+    <StackPanel Margin="15" Style="{DynamicResource StackPanelStyle1}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -20,63 +21,64 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <GroupBox Grid.Row="0" Grid.Column="0" Header="Battery mode" Margin="0,0,5,0">
+            <GroupBox Grid.Row="0" Grid.Column="0" Header="电源模式" Margin="0,0,5,0">
                 <StackPanel Margin="5,5,20,5" Orientation="Vertical">
-                    <RadioButton Margin="0,0,0,5" x:Name="radioConservation" Content="Conservation"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioConservation" Content="保护模式"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioBattery_Checked"
                                  VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0,0,0,5" x:Name="radioNormalCharge" Content="Normal"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioNormalCharge" Content="正常充电"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioBattery_Checked"
                                  VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0" x:Name="radioRapidCharge" Content="Rapid Charge" HorizontalAlignment="Left"
+                    <RadioButton Margin="0" x:Name="radioRapidCharge" Content="快充" HorizontalAlignment="Left"
                                  VerticalAlignment="Top" Checked="radioBattery_Checked"
                                  VerticalContentAlignment="Center" />
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Grid.Row="0" Grid.Column="1" Header="Always on USB" Margin="0">
+            <GroupBox Grid.Row="0" Grid.Column="1" Header="USB关机充电" Margin="0">
                 <StackPanel Margin="5,5,20,5" Orientation="Vertical">
-                    <RadioButton Margin="0,0,0,5" x:Name="radioAlwaysOnUsbOff" Content="Off" HorizontalAlignment="Left"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioAlwaysOnUsbOff" Content="关闭" HorizontalAlignment="Left"
                                  VerticalAlignment="Top" Checked="radioAlwaysOnUsb_Checked"
                                  Unchecked="radioAlwaysOnUsb_Checked" VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0,0,0,5" x:Name="radioAlwaysOnUsbOnWhenSleeping" Content="On when sleeping"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioAlwaysOnUsbOnWhenSleeping" Content="仅休眠时开启"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioAlwaysOnUsb_Checked"
                                  Unchecked="radioAlwaysOnUsb_Checked" VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0" x:Name="radioAlwaysOnUsbOnAlways" Content="On always"
+                    <RadioButton Margin="0" x:Name="radioAlwaysOnUsbOnAlways" Content="总是开启"
                                  HorizontalAlignment="Left" VerticalAlignment="Top" Checked="radioAlwaysOnUsb_Checked"
                                  Unchecked="radioAlwaysOnUsb_Checked" VerticalContentAlignment="Center" />
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Grid.Row="1" Grid.Column="0" Header="Power mode" Margin="0,0,5,0">
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="能效模式" Margin="0,0,5,0">
                 <StackPanel Margin="5,5,20,5" Orientation="Vertical">
-                    <RadioButton Margin="0,0,0,5" x:Name="radioQuiet" Content="Quiet" HorizontalAlignment="Left"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioQuiet" Content="安静" HorizontalAlignment="Left"
                                  VerticalAlignment="Top" Checked="radioPowerMode_Checked"
                                  VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0,0,0,5" x:Name="radioBalance" Content="Balance" HorizontalAlignment="Left"
+                    <RadioButton Margin="0,0,0,5" x:Name="radioBalance" Content="均衡" HorizontalAlignment="Left"
                                  VerticalAlignment="Top" Checked="radioPowerMode_Checked"
                                  VerticalContentAlignment="Center" />
-                    <RadioButton Margin="0" x:Name="radioPerformance" Content="Performance" HorizontalAlignment="Left"
+                    <RadioButton Margin="0" x:Name="radioPerformance" Content="性能" HorizontalAlignment="Left"
                                  VerticalAlignment="Top" Checked="radioPowerMode_Checked"
                                  VerticalContentAlignment="Center" />
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Grid.Row="1" Grid.Column="1" Margin="0" Header="Misc">
+            <GroupBox Grid.Row="1" Grid.Column="1" Margin="0" Header="杂项">
                 <StackPanel Margin="5,5,20,5" Orientation="Vertical">
                     <CheckBox Margin="0,0,0,5" x:Name="chkOverDrive" Content="Over Drive" HorizontalAlignment="Left"
                               VerticalAlignment="Top" Checked="chkOverDrive_Checked" Unchecked="chkOverDrive_Checked"
                               VerticalContentAlignment="Center" />
-                    <CheckBox Margin="0,0,0,5" x:Name="chkFnLock" Content="Fn Lock" HorizontalAlignment="Left"
+                    <CheckBox Margin="0,0,0,5" x:Name="chkFnLock" Content="Fn锁" HorizontalAlignment="Left"
                               VerticalAlignment="Top" Checked="chkFnLock_Checked" Unchecked="chkFnLock_Checked"
                               VerticalContentAlignment="Center" />
-                    <CheckBox Margin="0" x:Name="chkTouchpadLock" Content="Touchpad Lock" HorizontalAlignment="Left"
+                    <CheckBox Margin="0" x:Name="chkTouchpadLock" Content="触摸板锁" HorizontalAlignment="Left"
                               VerticalAlignment="Top" Checked="chkTouchpadLock_Checked"
                               Unchecked="chkTouchpadLock_Checked" VerticalContentAlignment="Center" />
                 </StackPanel>
             </GroupBox>
         </Grid>
-        <Button Margin="0,10,0,0" Padding="30,5,30,5" Content="Refresh" VerticalAlignment="Top"
+        <TextBlock  FontSize="8" HorizontalAlignment="right">汉化by NEKT茶糕·晴</TextBlock>
+        <Button Margin="0,10,0,0" Padding="30,5,30,5" Content="刷新状态" VerticalAlignment="Top"
                 HorizontalAlignment="Center" Click="btnRefresh_Click" />
     </StackPanel>
 </Window>
